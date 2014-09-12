@@ -6,7 +6,7 @@ MAINTAINER Andre Fernandes
 
 WORKDIR /opt
 
-RUN yum install -y openssh-server passwd
+RUN yum install -y openssh-server openssh-clients passwd
 
 ENV USERPWD secret
 ADD removekeys.sh /opt/removekeys.sh
