@@ -1,5 +1,6 @@
 SSHPORT=${SSHPORT:-8022}
+docker stop sshd
+docker rm sshd
 echo "Will use $SSHPORT port"
-
-docker run --rm -t -i -p $SSHPORT:22 andrefernandes/docker-sshd:latest
+docker run --name sshd -d -p $SSHPORT:22 andrefernandes/docker-sshd:latest
 
